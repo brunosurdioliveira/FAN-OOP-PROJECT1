@@ -1,0 +1,114 @@
+body { /* Adding a gif as background */
+    background-image: url(https://i.pinimg.com/originals/2a/10/d4/2a10d4c83738d5018c9be5150bd3ce67.gif);
+}
+
+.container {
+    /* Adding a padding to centralize the content */
+    padding: 30px;
+}
+
+.label { 
+    /* Adding some style on the instruction to select date */
+    padding: 10px;
+    font-family: 'Tenali Ramakrishna', sans-serif;
+    font-size: 25px;
+    color: azure;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.btn {
+    /* Adding a space from top(input) and the btn */
+    margin-top: 25px;
+}
+
+#titleDropdown {
+    /* Dropdown menu */
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align-last: center;
+}
+
+#outputTitle {
+    /* legend text with the title */
+    display: none;
+    text-align: center;
+    margin-top: 16px;
+    width: 400px;
+    text-transform: uppercase;
+    color: white;
+    background-color: brown;
+}
+
+#outputExplanation {
+    /* Explanation output div */
+    text-align: center;
+    width: 90%;
+    margin: 5%;
+    margin-top: 20px;
+}
+
+#image {
+    /* Adjust the image size to be fixed inside of fiedlset */
+    max-width: 1000px;
+    width: 95%;
+}
+
+#imageDiv {
+    /* Center the image outputed */
+    text-align: center;
+}
+
+#copyright {
+    /* Center the copyright text */
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+fieldset {
+    /* All output will be inside of it */
+    border: 1px solid #ffffff;
+    display: none;
+    background-color: aliceblue;
+    /* curve the border sides */
+    border-radius: 25px;
+}
+
+#logo {
+    /* APOD LOGO with the nasa image */
+    text-align: center;
+    color: lightgrey;
+    font-family: 'Tenali Ramakrishna', sans-serif;
+    letter-spacing: 10px;
+    padding-top: 40px;
+    margin-left: 30px;
+    text-shadow: 2px 1px rgb(255, 255, 255);
+    text-transform: capitalize;
+}
+
+h1 { 
+    /* Text inside #logo div */
+    font-size: 3.5rem;
+}
+
+.row {
+    /* Cass .row of the grid */
+    place-content: center;
+}
+
+#addValidationMessage {
+    /* area where will be outputed the errors */
+    color: #ff5252;
+    font-size: 20px;
+    letter-spacing: normal;
+    font-family: "Roboto", sans-serif;
+    background-color: black;
+    text-align: center;
+    display: block;
+}
+
+#fromToDate {
+    /* input area where the dates will be inputed */
+    width: 300px;
+    text-align: center;
+}

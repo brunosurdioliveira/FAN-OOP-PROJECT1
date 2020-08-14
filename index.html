@@ -1,0 +1,124 @@
+<!-- 
+    Name: Bruno Surdi Oliveira
+    Date: june 2020
+    Purpose: Project 1
+-->
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tenali+Ramakrishna&display=swap" rel="stylesheet">
+    <!-- datepicker css -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+    <!-- Title -->
+    <title>APOD Project</title>
+
+    <!-- additional CSS -->
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="logo"> 
+        <!-- Adding the text APOD as logo with nasa image -->
+        <h1>Astronomy Picture of the Day <img
+                src="https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg"></h1>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col"> <!--Grid bootstrap - empty -->
+            </div> 
+            <div class="col-5"> <!--Grid bootstrap - content centered -->
+                <form>
+                    <div class="row">
+                        <label class="label">Please select the range of dates of your interest:</label>
+                        <!-- place where the user will input the range of dates -->
+                        <input type="text" name="daterange" id="fromToDate" />
+                    </div>
+                    <div class="row">
+                        <button type="button" class="btn btn-info" onclick="filterDate()">Get Data</button>
+                    </div>
+                    <br>
+                    <!-- area to display the error messages -->
+                    <span id="addValidationMessage"></span>
+                </form>
+            </div>
+            <div class="col"> <!--Grid bootstrap - empty -->
+            </div> 
+            <br>
+            <!-- Output section - hidden untile select one title on dropdown menu --> 
+            <select id="titleDropdown" class="custom-select" onchange="displayObject();" hidden></select>
+            <fieldset>
+                <br>
+                <!-- Title output -->
+                <legend id="outputTitle"></legend>
+                <!-- Image output -->
+                <div id="imageDiv">
+                    <img id="image" src="" />
+                    <!-- Video output -->
+                    <iframe width="420" height="315" src="" hidden>
+                    </iframe>
+                </div>
+                <!-- Explanation output -->
+                <div id="outputExplanation">
+                </div>
+                <hr>
+                <!-- copyright output -->
+                <div id="copyright"></div>
+            </fieldset>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+    <!-- Date picker -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+    <!-- Setting up the date range picker -->
+    <script>
+        $(function () {
+            $('input[name="daterange"]').daterangepicker({
+                opens: 'center', // Open the calendar in the position centered
+                minDate: "16/06/1995", // Min date is June 16, 1995 (first data of the api)
+                maxDate: new Date(), // Max date is today's date
+                maxSpan: {
+                    'days': 29, // (29 day from today equals 30 in total)
+                },
+                locale: {
+                    format: 'DD/MM/YYYY', // Format dd-mm-yyyy
+                    separator: " - ",
+                    fromLabel: "From",
+                    toLabel: "To",
+                },
+                timePicker: false
+            });
+        });
+    </script>
+
+    <script src="main.js">
+    </script>
+</body>
+
+</html>
